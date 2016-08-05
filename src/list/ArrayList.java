@@ -5,15 +5,17 @@ package list;
  */
 public class ArrayList implements List {
 
-    public int DEFAULT_SIZE = 10;
+    private int DEFAULT_SIZE = 10;
+    private Object[] anArray;
 
     public ArrayList() {
-        Object[] anArray = new Object[DEFAULT_SIZE];
+        this.anArray = new Object[DEFAULT_SIZE];
         System.out.println( "cons" + anArray.length );
+
     }
 
     public ArrayList(int capacity) {
-        Object[] anArray = new Object[capacity];
+        this.anArray = new Object[capacity];
         System.out.println( "cons" + anArray.length );
     }
 
@@ -28,15 +30,9 @@ public class ArrayList implements List {
         System.arraycopy(anArray, 0, dest, 0, 10);
          */
 
+       int length = this.anArray.length - 1;
 
-
-
-
-
-
-
-
-
+      // this.anArray[0]
 
 
 
@@ -46,6 +42,7 @@ public class ArrayList implements List {
 
     @Override
     public Object get(int index) {
+
         return null;
     }
 
@@ -56,6 +53,16 @@ public class ArrayList implements List {
 
     @Override
     public int size() {
-        return 0;
+
+        int i;
+        int length = this.anArray.length -1;
+        for ( i=0; i<length; i++) {
+            if (this.anArray[i] == null) {
+                System.out.println( i );
+                return i;
+            }
+        }
+
+        return i;
     }
 }
