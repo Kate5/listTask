@@ -16,7 +16,30 @@ public class Main {
        // List<String> test = new ArrayList<>();
         List<String> test = new ArrayList();
         test.size();
+
         test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+        test.add( "dsds" );
+
         System.out.println( test );
 
 
