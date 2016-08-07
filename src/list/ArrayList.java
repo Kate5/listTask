@@ -26,18 +26,16 @@ public class ArrayList implements List {
         boolean result = false;
         int fullSize = this.getSize();
 
-        if ( (this.anArray.length-1) != fullSize ) {
-            int i=0;
-
+        if ((this.anArray.length - 1) != fullSize) {
+            int i = 0;
             this.anArray[this.getSize() + i] = o;
-            System.out.println("+ONE");
             System.out.println("len  " + this.anArray.length + "and size: " + this.getSize());
             result = true;
             i++;
 
         }
-        if ( (this.anArray.length-1) == fullSize ) {
-             throw new ArrayIndexOutOfBoundsException("error!");
+        if ((this.anArray.length - 1) == fullSize) {
+            throw new ArrayIndexOutOfBoundsException("error!");
         }
 
         return result;
@@ -72,7 +70,7 @@ public class ArrayList implements List {
 //
 //        } else {
 
-        }
+    }
 
     @Override
     public Object get(int index) {
