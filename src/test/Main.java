@@ -40,7 +40,7 @@ public class Main {
         test.add( "dsds" );
         test.add( "dsds" );
 
-        System.out.println( test );
+        System.out.println( test   + "size: " + test.size() );
 
 
     }

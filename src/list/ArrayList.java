@@ -24,22 +24,55 @@ public class ArrayList implements List {
     public boolean add(Object o) {
 
         boolean result = false;
-        if (this.anArray[0] == null) {
-            this.anArray[0] = o;
+        int fullSize = this.getSize();
+
+        if ( (this.anArray.length-1) != fullSize ) {
+            int i=0;
+
+            this.anArray[this.getSize() + i] = o;
+            System.out.println("+ONE");
+            System.out.println("len  " + this.anArray.length + "and size: " + this.getSize());
             result = true;
-            System.out.println( "first if" );
-        } else {
-            if (this.getSize() == this.anArray.length) {
-                Object[] destination = new Object[this.anArray.length * 2];
-                System.arraycopy(this.anArray, 0, destination, 0, 10);
-                result = true;
-                this.anArray = destination;
-                System.out.println("second if");
-            }
+            i++;
+
+        }
+        if ( (this.anArray.length-1) == fullSize ) {
+             throw new ArrayIndexOutOfBoundsException("error!");
         }
 
         return result;
-    }
+
+
+//        boolean result = false;
+//        if (this.anArray[0] == null) {
+//            this.anArray[0] = o;
+//            result = true;
+//            System.out.println( "first if" );
+//        } else {
+//            if (this.getSize() == this.anArray.length) {
+//                Object[] destination = new Object[this.anArray.length * 2];
+//                System.arraycopy(this.anArray, 0, destination, 0, 10);
+//                result = true;
+//                this.anArray = destination;
+//                System.out.println("second if");
+//            }
+//        }
+//
+//        return result;
+
+//
+//        if (this.getSize() == this.anArray.length) {
+//
+//            Object[] destination = new Object[this.anArray.length * 2];
+//            System.arraycopy(this.anArray, 0, destination, 0, 10);
+//            result = true;
+//            this.anArray = destination;
+//            this.anArray[this.getSize() + 1] = o;
+//            System.out.println("bigger");
+//
+//        } else {
+
+        }
 
     @Override
     public Object get(int index) {
