@@ -28,22 +28,17 @@ public class ArrayList implements List {
             this.anArray[0] = o;
             result = true;
             System.out.println( "first if" );
-        }
-
-        if ( this.getSize() == this.anArray.length ) {
-            Object[] destination = new Object[this.anArray.length*2];
-            System.arraycopy( this.anArray, 0, destination, 0, 10);
-            result = true;
-            this.anArray = destination;
-            System.out.println( "second if" );
-        }
-
-        else {
-            System.out.println( "hm" );
+        } else {
+            if (this.getSize() == this.anArray.length) {
+                Object[] destination = new Object[this.anArray.length * 2];
+                System.arraycopy(this.anArray, 0, destination, 0, 10);
+                result = true;
+                this.anArray = destination;
+                System.out.println("second if");
+            }
         }
 
         return result;
-
     }
 
     @Override
