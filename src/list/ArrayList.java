@@ -7,69 +7,41 @@ public class ArrayList implements List {
 
     private int DEFAULT_SIZE = 10;
     private Object[] anArray;
+    private int size = 0;
+    private int a = 0;
 
     public ArrayList() {
         this.anArray = new Object[DEFAULT_SIZE];
-        System.out.println("cons" + anArray.length);
-
     }
 
     public ArrayList(int capacity) {
         this.anArray = new Object[capacity];
-        System.out.println("cons" + anArray.length);
     }
 
 
     @Override
     public boolean add(Object o) {
-
-        boolean result = false;
-        int fullSize = this.getSize();
-
-        if ((this.anArray.length - 1) != fullSize) {
-            int i = 0;
-            this.anArray[this.getSize() + i] = o;
-            System.out.println("len  " + this.anArray.length + "and size: " + this.getSize());
-            result = true;
-            i++;
-
+        if (this.anArray.length - 1 == this.getSize()) {
+            System.out.println("ERROR!" + a++);
+        } else {
+            check(o);
         }
-        if ((this.anArray.length - 1) == fullSize) {
-            throw new ArrayIndexOutOfBoundsException("error!");
+        return false;
+    }
+
+    public int check(Object t) {
+        if (this.anArray[0] == null) {
+            System.out.println("from 0 point: " + "len " + anArray.length + " size: " + this.getSize());
+            this.anArray[0] = t;
+            System.out.println("from 0 point: " + "len " + anArray.length + " size: " + this.getSize());
+        } else {
+            for (int i = 0 + size; i < this.anArray.length - 1; i++) {
+                this.anArray[i] = t;
+                size++;
+                System.out.println("len " + anArray.length + " size: " + this.getSize());
+            }
         }
-
-        return result;
-
-
-//        boolean result = false;
-//        if (this.anArray[0] == null) {
-//            this.anArray[0] = o;
-//            result = true;
-//            System.out.println( "first if" );
-//        } else {
-//            if (this.getSize() == this.anArray.length) {
-//                Object[] destination = new Object[this.anArray.length * 2];
-//                System.arraycopy(this.anArray, 0, destination, 0, 10);
-//                result = true;
-//                this.anArray = destination;
-//                System.out.println("second if");
-//            }
-//        }
-//
-//        return result;
-
-//
-//        if (this.getSize() == this.anArray.length) {
-//
-//            Object[] destination = new Object[this.anArray.length * 2];
-//            System.arraycopy(this.anArray, 0, destination, 0, 10);
-//            result = true;
-//            this.anArray = destination;
-//            this.anArray[this.getSize() + 1] = o;
-//            System.out.println("bigger");
-//
-//        } else {
-
+        return 0;
     }
 
     @Override
@@ -91,9 +63,9 @@ public class ArrayList implements List {
 
     public int getSize() {
 
-        if (this.anArray == null || this.anArray[0] == null) {
-            return 0;
-        }
+//        if (this.anArray == null || this.anArray[0] == null) {
+//            return 0;
+//        }
         int size = 0;
         for (int i = 0; i < this.anArray.length - 1; i++) {
             if (this.anArray[i] == null) {
