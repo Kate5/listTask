@@ -7,8 +7,6 @@ public class ArrayList implements List {
 
     private int DEFAULT_SIZE = 10;
     private Object[] anArray;
-    private int size = 0;
-    private int a = 0;
 
     public ArrayList() {
         this.anArray = new Object[DEFAULT_SIZE];
@@ -28,15 +26,15 @@ public class ArrayList implements List {
         return false;
     }
 
-    private int addToArray(Object t) {
+    private void addToArray(Object t) {
 
-        for (int i = 0 + size; i < this.anArray.length - 1; i++) {
-            this.anArray[i] = t;
-            size++;
-            System.out.println("length: " + anArray.length + " and size: " + this.getSize());
-        }
+//        for (int i = 0 + size; i < this.anArray.length - 1; i++) {
+//            this.anArray[i] = t;
+//            size++; }
 
-        return 0;
+        this.anArray[this.getSize()] = t;
+        System.out.println("length: " + anArray.length + " and size: " + this.getSize());
+
     }
 
     private void copyAndAdd(Object g) {
@@ -64,11 +62,7 @@ public class ArrayList implements List {
         return getSize();
     }
 
-    public int getSize() {
-
-//        if (this.anArray == null || this.anArray[0] == null) {
-//            return 0;
-//        }
+    private int getSize() {
         int size = 0;
         for (int i = 0; i < this.anArray.length - 1; i++) {
             if (this.anArray[i] == null) {

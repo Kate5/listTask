@@ -13,18 +13,11 @@ import list.List;
 public class Main {
     public static void main(String[] args) {
 
-       // List<String> test = new ArrayList<>();
         List<String> test = new ArrayList();
-        test.size();
 
-        for (int i=0; i<20; i++) {
+        for (int i = 0; i < 20; i++) {
             test.add("test" + i);
         }
-
-
-
-        System.out.println( test  + "size: " + test.size() );
-
 
     }
 }
