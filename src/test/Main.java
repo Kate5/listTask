@@ -17,28 +17,11 @@ public class Main {
         List<String> test = new ArrayList();
         test.size();
 
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
-        test.add( "dsds" );
+        for (int i=0; i<20; i++) {
+            test.add("test" + i);
+        }
+
+
 
         System.out.println( test  + "size: " + test.size() );
 

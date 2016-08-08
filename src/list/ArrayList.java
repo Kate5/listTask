@@ -18,42 +18,49 @@ public class ArrayList implements List {
         this.anArray = new Object[capacity];
     }
 
-
     @Override
     public boolean add(Object o) {
-        if (this.anArray.length - 1 == this.getSize()) {
-            System.out.println("ERROR!" + a++);
+        if ((this.anArray.length - 1) == this.getSize()) {
+            copyAndAdd(o);
         } else {
-            check(o);
+            addToArray(o);
         }
         return false;
     }
 
-    public int check(Object t) {
+    private int addToArray(Object t) {
 
-            for (int i = 0 + size; i < this.anArray.length - 1; i++) {
-                this.anArray[i] = t;
-                size++;
-                System.out.println("len " + anArray.length + " size: " + this.getSize());
-            }
+        for (int i = 0 + size; i < this.anArray.length - 1; i++) {
+            this.anArray[i] = t;
+            size++;
+            System.out.println("length: " + anArray.length + " and size: " + this.getSize());
+        }
 
         return 0;
     }
 
+    private void copyAndAdd(Object g) {
+        Object[] newArr;
+        newArr = new Object[this.anArray.length + DEFAULT_SIZE];
+        int i;
+        for (i = 0; i < this.getSize(); i++) {
+            newArr[i] = this.anArray[i];
+        }
+        newArr[i + 1] = g;
+        this.anArray = newArr;
+    }
+
     @Override
     public Object get(int index) {
-
         return null;
     }
 
     @Override
     public void remove(int index) {
-
     }
 
     @Override
     public int size() {
-
         return getSize();
     }
 
