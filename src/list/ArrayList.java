@@ -30,17 +30,13 @@ public class ArrayList implements List {
     }
 
     public int check(Object t) {
-        if (this.anArray[0] == null) {
-            System.out.println("from 0 point: " + "len " + anArray.length + " size: " + this.getSize());
-            this.anArray[0] = t;
-            System.out.println("from 0 point: " + "len " + anArray.length + " size: " + this.getSize());
-        } else {
+
             for (int i = 0 + size; i < this.anArray.length - 1; i++) {
                 this.anArray[i] = t;
                 size++;
                 System.out.println("len " + anArray.length + " size: " + this.getSize());
             }
-        }
+
         return 0;
     }
 
